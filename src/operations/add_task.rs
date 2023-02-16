@@ -50,9 +50,7 @@ pub fn add_task(args: Vec<String>) {
     let task_id = match total_tasks {
         0 => 1,
         _ => {
-            let last_line_from_buffer =
-                tasks.last().unwrap().as_ref().expect("unable to read task");
-            let last_line = last_line_from_buffer;
+            let last_line = tasks.last().unwrap().as_ref().expect("unable to read task");
             let last_task: Task = ron::from_str::<Task>(&last_line).unwrap();
             last_task.id + 1
         }
