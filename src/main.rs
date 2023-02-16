@@ -16,6 +16,7 @@ fn main() {
     match operation_type {
         "add" => operations::add_task(args),
         "help" => operations::help(),
+        "list" => operations::list_tasks(),
         _ => panic!("Unknown action type: {}", operation_type),
     }
 }
